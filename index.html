@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>nmutation</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+		div.first, div.second, div.third {
+			font-size: 20px;
+		}
+		div.first {
+			background-color: #3498db;
+		}
+		div.second {
+			background-color: #8e44ad;
+		}
+		div.third {
+			background-color: #16a085;
+		}
+	</style>
+</head>
+<body>
+	<div class="first">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<br>
+		<button class="first" type="button">Add child</button>
+		<button class="first" type="button">Remove child</button>
+		<br><br>
+	</div>	
+	<div class="second">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<br>
+		<button class="second" type="button">Add child</button>
+		<button class="second" type="button">Remove child</button>
+		<br><br>
+	</div>
+	<div class="third">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<br>
+		<button class="third" type="button">Add child</button>
+		<button class="third" type="button">Remove child</button>
+		<br><br>
+	</div>
+	<script src="javascripts/nmutation.js" type="text/javascript"></script>
+	<script>
+		nmutation.init('div.first', function(parent, added, removed) {
+			console.log(parent);
+			console.log(added);
+			console.log(removed);
+		});
+
+		var fContainer = document.querySelectorAll('div.first')[0],
+			sContainer = document.querySelectorAll('div.second')[0],
+			tContainer = document.querySelectorAll('div.third')[0],
+			fBtnAdd = document.querySelectorAll('button.first')[0],
+			fBtnRemove = document.querySelectorAll('button.first')[1],
+			sBtnAdd = document.querySelectorAll('button.second')[0],
+			sBtnRemove = document.querySelectorAll('button.second')[1],
+			tBtnAdd = document.querySelectorAll('button.third')[0],
+			tBtnRemove = document.querySelectorAll('button.third')[1];
+
+		fBtnAdd.onclick = function() {
+			var node = document.createElement('div'),
+				textnode = document.createTextNode('generated child');
+			node.appendChild(textnode);
+			fContainer.appendChild(node);
+		};
+		fBtnRemove.onclick = function() {
+			var child = fContainer.getElementsByTagName('div')[0];
+			if(child) {
+				fContainer.removeChild(child);
+			}
+		};
+		sBtnAdd.onclick = function() {
+			var node = document.createElement('div'),
+				textnode = document.createTextNode('generated child');
+			node.appendChild(textnode);
+			sContainer.appendChild(node);
+		};
+		sBtnRemove.onclick = function() {
+			var child = sContainer.getElementsByTagName('div')[0];
+			if(child) {
+				sContainer.removeChild(child);
+			}
+		};
+		tBtnAdd.onclick = function() {
+			var node = document.createElement('div'),
+				textnode = document.createTextNode('generated child');
+			node.appendChild(textnode);
+			tContainer.appendChild(node);
+		};
+		tBtnRemove.onclick = function() {
+			var child = tContainer.getElementsByTagName('div')[0];
+			if(child) {
+				tContainer.removeChild(child);
+			}
+		};
+	</script>
+</body>
+</html>
