@@ -23,8 +23,8 @@ Great for monitoring the size of a container.
   
   **callback** is a function
   * *parent* is the affected or the parent DOM
-  * *added* added to DOM - default = [ ] empty array
-  * *removed* removed from DOM - default = [ ] empty array
+  * *added* added to parent DOM - default = [ ] empty array
+  * *removed* removed from parent DOM - default = [ ] empty array
 
 ## Example usage
 ```javascript
