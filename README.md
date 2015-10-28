@@ -36,4 +36,4 @@ Great for monitoring the size of a container.
 			//Do something awesome...
 	});
 ```
-Demo http:
+Demo http://lightnick.github.io/nmutation/demo.html
