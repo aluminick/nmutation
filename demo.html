@@ -11,7 +11,11 @@
     <style type="text/css">
     div.first, div.second, div.third {
       font-size: 20px;
-      color: white;
+      color: silver;
+      padding: 10px;
+    }
+    button {
+      color: grey;
     }
     div.first {
       background-color: #3498db;
@@ -36,6 +40,7 @@
     <section class="main-content">
       <h1>
 <a id="nmutation" class="anchor" href="#nmutation" aria-hidden="true"><span class="octicon octicon-link"></span></a>nmutation</h1>
+<em>check firebug or devTools to view output</em><br>
   <div class="first">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -75,8 +80,13 @@
   <script src="javascripts/nmutation.js" type="text/javascript"></script>
   <script>
     nmutation.init('div.first', function(parent, added, removed) {
+      console.log('parent: ');
       console.log(parent);
+      console.log('\n');
+      console.log('added: ');
       console.log(added);
+      console.log('\n');
+      console.log('removed: ');
       console.log(removed);
     });
 
