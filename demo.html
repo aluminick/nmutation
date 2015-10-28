@@ -79,7 +79,7 @@
   </div>
   <script src="javascripts/nmutation.js" type="text/javascript"></script>
   <script>
-    nmutation.init('div.first', function(parent, added, removed) {
+    nmutation.init(['div.first', 'div.second', 'div.third'], function(parent, added, removed) {
       console.log('parent: ');
       console.log(parent);
       console.log('\n');
