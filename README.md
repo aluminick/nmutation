@@ -2,6 +2,8 @@
 An easy to use plugin that monitors/observes the insertion and deletion of children in a parent element. 
 Great for monitoring the size of a container. 
 
+*This plugin uses [MutationObserver API](https://developer.mozilla.org/en/docs/Web/API/MutationObserver) to monitor changes in a DOM*
+
 *Supported browsers*
 
 | Chrome        | Firefox (Gecko) | Internet Explorer  | Opera | Safari 	 |
