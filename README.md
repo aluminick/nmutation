@@ -30,4 +30,10 @@ Great for monitoring the size of a container.
 			//Do something awesome...
 	});
 ```
+**or**
+```javascript
+    nmutation.init(['div.first', 'div.second'], function(parent, added, removed) {
+			//Do something awesome...
+	});
+```
 Demo http:
