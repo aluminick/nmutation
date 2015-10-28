@@ -8,6 +8,21 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <style type="text/css">
+    div.first, div.second, div.third {
+      font-size: 20px;
+      color: white;
+    }
+    div.first {
+      background-color: #3498db;
+    }
+    div.second {
+      background-color: #8e44ad;
+    }
+    div.third {
+      background-color: #16a085;
+    }
+  </style>
   </head>
   <body>
     <section class="page-header">
@@ -21,7 +36,97 @@
     <section class="main-content">
       <h1>
 <a id="nmutation" class="anchor" href="#nmutation" aria-hidden="true"><span class="octicon octicon-link"></span></a>nmutation</h1>
+  <div class="first">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <br>
+    <button class="first" type="button">Add child</button>
+    <button class="first" type="button">Remove child</button>
+    <br><br>
+  </div>  
+  <div class="second">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <br>
+    <button class="second" type="button">Add child</button>
+    <button class="second" type="button">Remove child</button>
+    <br><br>
+  </div>
+  <div class="third">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <br>
+    <button class="third" type="button">Add child</button>
+    <button class="third" type="button">Remove child</button>
+    <br><br>
+  </div>
+  <script src="javascripts/nmutation.js" type="text/javascript"></script>
+  <script>
+    nmutation.init('div.first', function(parent, added, removed) {
+      console.log(parent);
+      console.log(added);
+      console.log(removed);
+    });
 
+    var fContainer = document.querySelectorAll('div.first')[0],
+      sContainer = document.querySelectorAll('div.second')[0],
+      tContainer = document.querySelectorAll('div.third')[0],
+      fBtnAdd = document.querySelectorAll('button.first')[0],
+      fBtnRemove = document.querySelectorAll('button.first')[1],
+      sBtnAdd = document.querySelectorAll('button.second')[0],
+      sBtnRemove = document.querySelectorAll('button.second')[1],
+      tBtnAdd = document.querySelectorAll('button.third')[0],
+      tBtnRemove = document.querySelectorAll('button.third')[1];
+
+    fBtnAdd.onclick = function() {
+      var node = document.createElement('div'),
+        textnode = document.createTextNode('generated child');
+      node.appendChild(textnode);
+      fContainer.appendChild(node);
+    };
+    fBtnRemove.onclick = function() {
+      var child = fContainer.getElementsByTagName('div')[0];
+      if(child) {
+        fContainer.removeChild(child);
+      }
+    };
+    sBtnAdd.onclick = function() {
+      var node = document.createElement('div'),
+        textnode = document.createTextNode('generated child');
+      node.appendChild(textnode);
+      sContainer.appendChild(node);
+    };
+    sBtnRemove.onclick = function() {
+      var child = sContainer.getElementsByTagName('div')[0];
+      if(child) {
+        sContainer.removeChild(child);
+      }
+    };
+    tBtnAdd.onclick = function() {
+      var node = document.createElement('div'),
+        textnode = document.createTextNode('generated child');
+      node.appendChild(textnode);
+      tContainer.appendChild(node);
+    };
+    tBtnRemove.onclick = function() {
+      var child = tContainer.getElementsByTagName('div')[0];
+      if(child) {
+        tContainer.removeChild(child);
+      }
+    };
+  </script>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/lightnick/nmutation">Nmutation</a> is maintained by <a href="https://github.com/lightnick">Nickie Archua</a>.</span>
